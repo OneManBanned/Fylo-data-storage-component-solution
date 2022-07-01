@@ -1,0 +1,276 @@
+/* CONTENTS ---------------------------------------------------------------------------------------------------
+
+GLOBAL STYLES (line 10)
+MOBILE TYPOGRAPHY (line 30)
+MOBILE LAYOUT (line 61)
+DESKTOP TYPOGRAPHY (line 188)
+DESKTOP LAYOUT (line 209)
+ ------------------------------------------------------------------------------------------------------------ */
+
+/* GLOBAL STYLES  */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+/* MOBILE TYPOGRAPHY */
+
+.secondDiv {
+    text-align: center;
+}
+
+.secondDiv__paragraph {
+    font-size: .8rem;
+    letter-spacing: .075rem;
+    font-weight: 400;
+    color: var(--Pale-Blue);
+}
+
+.secondDiv__span,
+.range__amount {
+    font-weight: 700;
+    color: var(--Pale-Blue);
+}
+
+.thirdDiv__left {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.thirdDiv__leftSpan {
+    color: var(--Grayish-Blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .075rem;
+}
+
+/*  MOBILE LAYOUT */
+
+body {
+    min-height: 100vh;
+    background: center center url(./images/bg-mobile.png) no-repeat var(--Dark-Blue);
+}
+
+main {
+    padding: 9rem 2rem;
+}
+
+.firstDiv,
+.secondDiv {
+    background-color: var(--Dark-Blue);
+}
+
+.firstDiv {
+    margin-bottom: 1.5rem;
+    border-radius: 1rem 7rem 1rem 1rem;
+    padding: 2.75rem;
+    width: 100%;
+}
+
+.iconDiv {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.25rem;
+}
+
+.iconDiv__icon {
+    border-radius: .75em;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-Dark-Blue);
+}
+
+.secondDiv,
+.thirdDiv {
+    border-radius: 1rem;
+}
+
+.secondDiv {
+    position: relative;
+    padding: 2.25rem;
+    padding-bottom: 4.5rem;
+}
+
+.secondDiv__paragraph {
+    margin-bottom: 1.25rem;
+}
+
+.rangeDiv {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.rangeDiv__range::before {
+    content: '';
+    height: 75%;
+    width: 75%;
+    background-image: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    position: absolute;
+    border-radius: inherit;
+}
+
+.rangeDiv__range {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 1.5rem;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 1rem;
+    padding-left: 1.25%;
+    margin-bottom: 1rem;
+}
+
+.rangeDiv__range:after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    height: .8rem;
+    width: .8rem;
+    left: 71.25%;
+    border-radius: 50%;
+}
+
+.range__amount {
+    display: inline;
+    align-self: flex-start;
+}
+
+.thirdDiv {
+    background-color: white;
+    width: 60%;
+    position: absolute;
+    bottom: -20%;
+    left: 20%;
+    padding: 1rem 1.25rem;
+    display: grid;
+    height: 5.5rem;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.thirdDiv__left {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    justify-self: center;
+    align-self: center;
+}
+
+.thirdDiv__leftSpan {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+@media (min-width: 376px) {
+
+    /* DESKTOP TYPOGRPAHY */
+
+    .secondDiv {
+        text-align: left;
+    }
+
+    .secondDiv__paragraph {
+        font-size: 1rem;
+        opacity: .75;
+        letter-spacing: 0;
+    }
+
+    .range__amount {
+        font-size: .85rem;
+        opacity: .75;
+    }
+
+    .thirdDiv__leftSpan {
+        font-size: .9rem;
+    }
+
+    /*  DESKTOP LAYOUT */
+
+    body {
+        background: none;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: left 100% / 100% 50% url(./images/bg-desktop.png) no-repeat var(--Very-Dark-Blue);
+    }
+
+    .flexContainer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 2rem;
+    }
+
+    .firstDiv {
+        margin: 0;
+        width: 25rem;
+    }
+
+    .secondDiv {
+        width: 37rem;
+        height: 11rem;
+        padding-top: 2.85rem;
+    }
+
+    .secondDiv__paragraph {
+        margin-bottom: 1.22rem;
+    }
+
+    .rangeDiv__range::before {
+        height: 70%;
+        width: 73%;
+    }
+
+    .rangeDiv__range {
+        height: 1.4rem;
+        padding-left: 1%;
+        margin-bottom: .5rem;
+    }
+
+    .rangeDiv__range:after {
+        height: .75rem;
+        width: .75rem;
+        left: 71.15%;
+    }
+
+    .thirdDiv {
+        width: 36%;
+        bottom: 85%;
+        left: 58%;
+        padding: 1rem 0 1rem 1rem;
+        border-bottom-right-radius: 0;
+    }
+
+    .thirdDiv:after {
+        content: '';
+        position: inherit;
+        bottom: -28%;
+        right: 0;
+        border: 1.5rem solid transparent;
+        border-right: 1.5rem solid white;
+
+    }
+}
